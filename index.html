@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This web cheatsheet HTML + CSS" />
+    <title>Cheatsheet HTML + CSS</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="photo/clker-free-vector-images-horses-44666.svg"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
+    <a class="skip-link" href="#main">Перейти до вмісту</a>
+    <a class="button" href="#body" aria-label="Повернутися на початок">
+      <span aria-hidden="true">↑</span>
+    </a>
+    <header class="header">
+      <img
+        class="zagol"
+        src="photo/clker-free-vector-images-horses-44666.svg"
+        alt="logo"
+      />
+      <h1 class="name-web">Шпаргалка HTML + CSS</h1>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a class="nav-a" href="#start">Quick start</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-a" href="#selectors">Selectors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-a" href="#box">Блоковая модель</a>
+          </li>
+          <li class="nav-item"><a class="nav-a" href="#flex">Flexbox</a></li>
+          <li class="nav-item"><a class="nav-a" href="#grid">Grid</a></li>
+          <li class="nav-item">
+            <a class="nav-a" href="#responsive">Адаптив</a>
+          </li>
+          <li class="nav-item"><a class="nav-a" href="#forms">Формы</a></li>
+          <li class="nav-item">
+            <a class="nav-a" href="#a11y">Доступность</a>
+          </li>
+          <li class="nav-item"><a class="nav-a" href="#colors">Цвета</a></li>
+          <li class="nav-item"><a class="nav-a" href="#units">Единицы</a></li>
+          <li class="nav-item">
+            <a class="nav-a" href="#position">Позиционирование </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-a" href="#type">Текст и шрифты</a>
+          </li>
+          <li class="nav-item"><a class="nav-a" href="#motion">Переходы</a></li>
+          <li class="nav-item"><a class="nav-a" href="#images">Картинки</a></li>
+          <li class="nav-item"><a class="nav-a" href="#display">Display</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <section id="start">
+        <h2>Быстрый старт</h2>
+        <p>Минимальный HTML-документ: doctype, язык, кодировка и viewport.</p>
+
+        <pre><code>&lt;!DOCTYPE html&gt; 
+&lt;html lang="ru"&gt;</code></pre>
+        <details>
+          <summary>Зачем lang и charset?</summary>
+          <p>
+            lang помогает скринридерам, а charset спасает русские буквы от
+            кракозябр.
+          </p>
+        </details>
+        <details>
+          <summary>Зачем нужен meta viewport?</summary>
+          <p>Масштаб на мобильных без «десктопного» уменьшения</p>
+        </details>
+        <details>
+          <summary>Почему &lt;title&gt; важен?</summary>
+          <p>Вкладка, закладки, сниппет в поиске</p>
+        </details>
+      </section>
+      <section id="selectors">
+        <h2>Селекторы</h2>
+        <p>CSS находит элементы по тегу, классу, id и состоянию.</p>
+
+        <pre><code>.card:hover { color: red; }</code></pre>
+        <details>
+          <summary>Что сильнее: класс или id?</summary>
+          <p>id сильнее класса; при равенстве побеждает последнее правило.</p>
+        </details>
+        <details>
+          <summary>Что делает * ?</summary>
+          <p>Универсальный селектор, где полезен и где опасно переборщить</p>
+        </details>
+      </section>
+      <section id="box">
+        <h2>Блоковая Модель</h2>
+        <p>Элемент = контент + padding + border + margin.</p>
+
+        <pre><code>* { box-sizing: border-box; }</code></pre>
+        <details>
+          <summary>Зачем box-sizing: border-box?</summary>
+          <p>Чтобы ширина уже включала отступы и рамку — так проще считать.</p>
+        </details>
+        <details>
+          <summary>Что такое схлопывание margin?</summary>
+          <p>Вертикальные отступы соседей могут схлопнуться в один</p>
+        </details>
+      </section>
+      <section id="flex">
+        <h2>Столбец или ряд - Flexbox</h2>
+        <p>Раскладывает элементы в одну линию: в ряд или в столбец.</p>
+
+        <pre><code>.row { display: flex; gap: 16px; }</code></pre>
+        <details>
+          <summary>Чем justify-content отличается от align-items?</summary>
+          <p>justify работает по главной оси, align — по поперечной.</p>
+        </details>
+        <details>
+          <summary>Что делает flex-wrap?</summary>
+          <p>Перенос на новую строку, когда не хватает места</p>
+        </details>
+        <details>
+          <summary>Что такое flex: 1?</summary>
+          <p>Краткая запись grow/shrink/basis и делёж свободного места</p>
+        </details>
+      </section>
+      <section id="grid">
+        <h2>Grid</h2>
+        <p>Сетка из строк и столбцов для двумерных макетов.</p>
+
+        <pre><code>repeat(auto-fit, minmax(200px, 1fr))</code></pre>
+        <details>
+          <summary>Что делает auto-fit?</summary>
+          <p>Сам подбирает количество колонок под доступную ширину.</p>
+        </details>
+        <details>
+          <summary>Чем fr отличается от % ?</summary>
+          <p>Доля свободного пространства grid vs процент от контейнера.</p>
+        </details>
+      </section>
+      <section id="responsive">
+        <h2>Адаптив</h2>
+        <p>Сначала стили для телефона, потом расширяем через @media.</p>
+
+        <pre><code>@media (min-width: 768px) { ... }</code></pre>
+        <details>
+          <summary>Почему mobile-first?</summary>
+          <p>Так проще: на узком экране не приходится переопределять лишнее.</p>
+        </details>
+        <details>
+          <summary>Что делает prefers-reduced-motion?</summary>
+          <p>Уважение к настройке пользователя уменьшить анимации.</p>
+        </details>
+        <details>
+          <summary>Почему лучше ставить брейкпоинты по контенту?</summary>
+          <p>Дизайн ломается не «по устройству», а по ширине/контенту</p>
+        </details>
+      </section>
+      <section id="forms">
+        <h2>Формы</h2>
+        <p>У каждого поля нужен label, а placeholder — только подсказка.</p>
+
+        <pre><code>&lt;label for="email"&gt;Почта&lt;/label&gt;</code></pre>
+        <details>
+          <summary>Почему нельзя заменить label на placeholder?</summary>
+          <p>Placeholder исчезает при вводе и плохо читается скринридерами.</p>
+        </details>
+        <details>
+          <summary>Зачем type="email"/tel/number?</summary>
+          <p>Клавиатура, встроенная валидация, семантика</p>
+        </details>
+      </section>
+      <section id="a11y">
+        <h2>Доступность</h2>
+        <p>Семантика, контраст и видимый фокус делают сайт удобным для всех.</p>
+
+        <pre><code>&lt;img src="coffee.jpg" alt="Чашка кофе"&gt;</code></pre>
+        <details>
+          <summary>Что писать в alt?</summary>
+          <p>Краткое описание картинки; декоративную — alt="".</p>
+        </details>
+        <details>
+          <summary>Зачем видимый фокус?</summary>
+          <p>Клавиатурная навигация; без него непонятно, где ты находишься.</p>
+        </details>
+      </section>
+      <section id="colors">
+        <h2>Цвета и переменные</h2>
+        <p>
+          Переменные CSS задают значения один раз и переиспользуют через var().
+        </p>
+
+        <pre><code>Объявление переменной в :root и использование её в body или .button</code></pre>
+        <details>
+          <summary>Зачем переменные, если можно просто писать цвет?</summary>
+          <p>Меняешь в одном месте — обновляется везде; удобно для темы</p>
+        </details>
+        <details>
+          <summary>Чем hex отличается от rgb/hsl?</summary>
+          <p>
+            Разные способы записи; где удобнее прозрачность/настройка оттенка.
+          </p>
+        </details>
+      </section>
+      <section id="units">
+        <h2>Единицы</h2>
+        <p>px фиксирован, rem привязан к корневому шрифту, % — к родителю.</p>
+
+        <pre><code>Пример с font-size: 1rem, padding: 1.5rem, width: 100%</code></pre>
+        <details>
+          <summary>Когда брать rem, а когда px?</summary>
+          <p>rem — для текста и отступов, px — для тонких рамок/деталей</p>
+        </details>
+        <details>
+          <summary>Что такое vh/vw?</summary>
+          <p>Проценты от окна просмотра и где они полезны/коварны.</p>
+        </details>
+      </section>
+      <section id="position">
+        <h2>Позиционирование</h2>
+        <p>
+          position меняет, как элемент размещается: в потоке, относительно себя
+          или окна.
+        </p>
+
+        <pre><code>position: sticky; top: 0; или пара relative + absolute</code></pre>
+        <details>
+          <summary>Почему absolute иногда «улетает»?</summary>
+          <p>Он позиционируется от ближайшего родителя с position, не static</p>
+        </details>
+        <details>
+          <summary>Чем sticky отличается от fixed?</summary>
+          <p>Прилипает внутри контейнера vs всегда относительно окна</p>
+        </details>
+      </section>
+      <section id="type">
+        <h2>Текст и шрифты</h2>
+        <p>
+          Читаемость зависит от шрифта, размера, межстрочного интервала и длины
+          строки.
+        </p>
+
+        <pre><code>line-height: 1.6; и ограничение ширины текста через max-width в ch</code></pre>
+        <details>
+          <summary>Почему line-height лучше писать без px?</summary>
+          <p>Без единицы это множитель — он масштабируется вместе со шрифтом</p>
+        </details>
+      </section>
+      <section id="motion">
+        <h2>Переходы</h2>
+        <p>
+          transition плавно меняет свойство, а transform хорошо анимируется.
+        </p>
+
+        <pre><code>transition для кнопки и изменение transform на :hover</code></pre>
+        <details>
+          <summary>Какие свойства анимировать безопаснее?</summary>
+          <p>
+            opacity и transform — они обычно не вызывают тяжёлый перерасчёт
+            layout
+          </p>
+        </details>
+      </section>
+      <section id="images">
+        <h2>Картинки</h2>
+        <p>Картинка должна вписываться в контейнер и иметь понятный alt.</p>
+
+        <pre><code>img { max-width: 100%; height: auto; display: block; }</code></pre>
+        <details>
+          <summary>Зачем max-width: 100%?</summary>
+          <p>Чтобы картинка не вылезала за пределы блока на узком экране</p>
+        </details>
+        <details>
+          <summary>Когда alt должен быть пустым?</summary>
+          <p>Декоративное изображение, которое не несёт смысла</p>
+        </details>
+      </section>
+      <section id="display">
+        <h2>Display</h2>
+        <p>Чем отличаются блочные, строчные и inline-block элементы</p>
+
+        <pre><code>Сравни block, inline, inline-block, none</code></pre>
+        <details>
+          <summary>Почему у inline не работают width и height?</summary>
+          <p>
+            Строчный элемент занимает ширину содержимого и не создаёт блочную
+            коробку
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer>Сделано для практики. Добавляй свои примеры.</footer>
+  </body>
+</html>

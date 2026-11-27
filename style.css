@@ -1,0 +1,195 @@
+:root {
+  --bg: #f7f9fc;
+  --ink: #243041;
+  --muted: #5f6f86;
+  --accent: #5b5bd6;
+  --card: #ffffff;
+  --border: #dde4ee;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4sYNRNTis3BP1Apvy945oXLhq4XSMFoyBz3bIgFRg5g&s=10");
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 16px;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: #859fc4;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 16px;
+}
+
+.name-web {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.header {
+  /* position: sticky; для того что бы навигация при прокрутке оставалась  */
+  top: 0px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  background-color: #0a822c;
+  padding: 16px 24px 16px 24px;
+}
+
+.button {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  background: #859fc4;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.nav-list a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+.nav-list a:hover {
+  color: #000;
+  background-color: #8ed4a8;
+  border-radius: 15px;
+}
+.nav-list a:focus-visible {
+  outline: auto;
+  color: var(--accent);
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px 20px 64px;
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+}
+footer {
+  padding: 16px 12px 16px 12px;
+  text-align: center;
+  background-color: var(--muted);
+  color: #fff;
+  font-size: 15px;
+}
+section {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 24px 24px;
+  margin-top: 24px;
+  scroll-margin-top: 250px;
+}
+h2 {
+  margin: 0 0 8px;
+}
+pre {
+  background-color: #dceaff;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+code {
+  font-family: ui-monospace, "SF Mono", Consolas, monospace;
+  font-size: 0.95em;
+}
+summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.95em;
+}
+details {
+  padding: 10px 0;
+}
+.zagol {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 4px;
+    padding-bottom: 6px;
+  }
+
+  .nav-item {
+    flex: 0 0 auto;
+  }
+
+  .header {
+    position: static;
+    padding: 12px 16px;
+  }
+
+  .name-web {
+    font-size: 1.3rem;
+  }
+
+  .zagol {
+    width: 64px;
+    height: 64px;
+  }
+
+  .nav-list {
+    gap: 4px;
+  }
+
+  section {
+    padding: 18px 16px;
+    scroll-margin-top: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
