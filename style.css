@@ -193,3 +193,44 @@ details {
     scroll-behavior: auto;
   }
 }
+
+.theme-toggle {
+  margin-left: auto;
+  flex-shrink: 0;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+body.dark {
+  --bg: #141a22;
+  --ink: #e8eef7;
+  --muted: #9fb0c7;
+  --accent: #a5a5ff;
+  --card: #1e2733;
+  --border: #334155;
+  background-image: none;
+}
+
+body.dark .header {
+  background-color: #2a3648;
+}
+
+body.dark pre {
+  background-color: #0f1720;
+}
+
+body.dark .nav-list a:hover {
+  color: #fff;
+  background-color: #3b4a63;
+}
+
+body.dark .button,
+body.dark .skip-link {
+  background: #3b4a63;
+}
