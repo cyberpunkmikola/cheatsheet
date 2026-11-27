@@ -52,7 +52,7 @@ body {
 }
 
 .header {
-  /* position: sticky; для того что бы навигация при прокрутке оставалась  */
+  /* position: sticky;  */
   top: 0px;
   z-index: 50;
   display: flex;
